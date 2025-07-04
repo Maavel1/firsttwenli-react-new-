@@ -1,0 +1,18 @@
+.breadcrumbs {
+  font-size: 14px;
+  margin-bottom: 20px;
+  color: #555;
+
+  a {
+    color: rgb(144, 84, 248);
+    text-decoration: none;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+
+  span {
+    color: rgb(127, 127, 127);
+  }
+}

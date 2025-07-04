@@ -1,0 +1,122 @@
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  transition: all 0.2s ease;
+  padding: 30px 0px 30px 0px;
+  transition: all 0.3s ease;
+  &.scrolledd {
+    top: -11px;
+    transition: all 0.3s ease;
+    color: white;
+  }
+
+  .container-header {
+    max-width: 1200px;
+    margin: 0 auto;
+    transition: all 0.3s ease;
+    display: flex;
+
+    align-items: center;
+    justify-content: space-between;
+    &.scrolled {
+      backdrop-filter: blur(100px);
+      border-radius: 30px;
+      background-color: rgb(0 0 0 / 22%);
+      padding: 15px 15px 15px 15px;
+      transition: all 0.3s ease;
+    }
+  }
+
+  .logo {
+    font-weight: bold;
+    text-decoration: none;
+    color: #333;
+    img {
+      max-width: 132px;
+    }
+  }
+
+  .scrolleddg {
+    color: white !important;
+  }
+  .nav {
+    display: flex;
+    gap: 20px;
+
+    a {
+      text-decoration: none;
+      color: rgb(127 127 127);
+      font-weight: 500;
+      transition: all 0.2s ease;
+
+      &.active {
+        color: #ffffff;
+        position: relative;
+        transition: all 0.2s ease;
+
+        &::after {
+          content: "";
+          position: absolute;
+          bottom: -14px;
+          left: 50%;
+          transform: translateX(-50%);
+          width: 10px;
+          height: 10px;
+          background-color: rgb(144, 84, 248);
+          border-radius: 50%;
+          animation: pulse 1.5s infinite;
+        }
+      }
+
+      @keyframes pulse {
+        0% {
+          transform: translateX(-50%) scale(1);
+          opacity: 1;
+        }
+        50% {
+          transform: translateX(-50%) scale(1.3);
+          opacity: 0.5;
+        }
+        100% {
+          transform: translateX(-50%) scale(1);
+          opacity: 1;
+        }
+      }
+
+      &.active::after {
+        animation: pulse 1s infinite;
+      }
+
+      &:hover {
+        color: rgb(144, 84, 248);
+        transition: all 0.2s ease;
+      }
+    }
+  }
+
+  .cta-button {
+    background-color: rgb(144, 84, 248);
+    color: white;
+    padding: 14px 20px;
+    border-radius: 8px;
+    text-decoration: none;
+    transition: background-color 0.2s ease;
+    font-size: 15px;
+
+    &:hover {
+      background-color: #ffffff;
+      color: black;
+    }
+  }
+}
+
+
+@media (max-width: 620px) {
+  .site-header {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    top: unset;
+  }
+}

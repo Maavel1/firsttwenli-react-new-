@@ -1,0 +1,15 @@
+.breadcrumbs {
+  font-size: 14px;
+  margin-bottom: 20px;
+  color: #555;
+}
+.breadcrumbs a {
+  color: rgb(144, 84, 248);
+  text-decoration: none;
+}
+.breadcrumbs a:hover {
+  text-decoration: underline;
+}
+.breadcrumbs span {
+  color: rgb(127, 127, 127);
+}/*# sourceMappingURL=Breadcrumbs.css.map */

@@ -1,0 +1,61 @@
+/* Reset some default browser styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Set a base font and background color for the body */
+body {
+  font-family: Arial, sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
+  background-color: #f9f9f9;
+  color: #d2d2d2;
+  background-color: #1e1e1e;
+}
+
+/* Add a container class for layout */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Style for headings */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: #222;
+  margin-bottom: 15px;
+}
+
+/* Style for links */
+a {
+  color: #007bff;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+button {
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+.no-scroll {
+  overflow: hidden;
+  height: 100vh;
+}

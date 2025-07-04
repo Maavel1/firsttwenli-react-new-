@@ -1,0 +1,140 @@
+.service-details {
+  margin-top: 40px;
+}
+.service-details h1 {
+  font-size: 32px;
+  margin-bottom: 20px;
+}
+.service-details p {
+  font-size: 18px;
+  line-height: 1.6;
+}
+
+.rows_service_details {
+  display: flex;
+  margin-top: 80px;
+  flex-wrap: wrap;
+  gap: 80px;
+}
+
+.img_service_details {
+  flex: 1;
+  max-width: 50%;
+}
+.img_service_details img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: center;
+     object-position: center;
+}
+
+.content_service_details {
+  flex: 1;
+  max-width: 50%;
+  display: flex;
+  flex-direction: column;
+}
+.content_service_details h1 {
+  font-size: 28px;
+  margin-bottom: 15px;
+  color: white;
+}
+.content_service_details p {
+  font-size: 16px;
+  line-height: 1.6;
+  color: #888888;
+  width: 100%;
+}
+.content_service_details .portfolio-btn {
+  align-self: start;
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: inherit;
+  color: #fff;
+  font-size: 16px;
+  font-weight: 500;
+  border-radius: 8px;
+  text-decoration: none;
+  border: 2px solid rgb(144, 84, 248);
+  transition: all 0.3s ease;
+}
+.content_service_details .portfolio-btn:hover {
+  background-color: transparent;
+  color: rgb(144, 84, 248);
+  border-color: rgb(144, 84, 248);
+  background-color: white;
+  transition: all 0.3s ease;
+}
+.content_service_details .portfolio-btn:active {
+  background-color: rgb(144, 84, 248);
+  border-color: #0056b3;
+  transition: all 0.3s ease;
+}
+
+@media (max-width: 768px) {
+  .rows_service_details {
+    flex-direction: column;
+  }
+  .img_service_details,
+  .content_service_details {
+    max-width: 100%;
+  }
+}
+.details_card {
+  display: flex;
+  margin: 20px 0px 20px 0px;
+  gap: 80px;
+  align-items: center;
+  -webkit-backdrop-filter: blur(100px);
+          backdrop-filter: blur(100px);
+  border-radius: 30px;
+  background-color: rgba(0, 0, 0, 0.22);
+  padding: 15px 15px 15px 15px;
+}
+
+.time_devole,
+.price_card {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: 40%;
+}
+.time_devole p,
+.price_card p {
+  color: #dedede;
+}
+.time_devole img,
+.price_card img {
+  max-width: 24px;
+  fill: #0056b3;
+}
+
+.btn_service_details {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.btn_service_details button {
+  background-color: rgb(144, 84, 248);
+  transition: all 0.3s ease;
+}
+.btn_service_details button:hover {
+  background-color: white;
+  color: rgb(144, 84, 248);
+  transition: all 0.3s ease;
+}
+
+.rating_card {
+  justify-content: center;
+  background-color: #f9f9f9;
+  padding: 6px 14px;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  transition: 0.3s;
+}
+.rating_card .star_icon {
+  color: #ffc107;
+  font-size: 20px;
+}/*# sourceMappingURL=ServiceDetailsPage.css.map */
