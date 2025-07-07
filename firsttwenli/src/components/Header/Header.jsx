@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { Link, NavLink } from "react-router-dom";
-import "./Header.scss";
+import "./header.scss";
 import logo from "../../assets/logo_1.png";
 import ModalForm from "../ModalForm/ModalForm";
 
