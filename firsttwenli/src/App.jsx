@@ -8,7 +8,7 @@ import Contact from "./pages/contact/Contact";
 import Portfolio from "./pages/portfolio/Portfolio";
 import ServiceDetailsPage from "./components/ServiceDetailsPage/ServiceDetailsPage";
 import UserAgreement from "./pages/terms/UserAgreement";
-import PrivacyPolicy from "./pages/privacy-policy/privacyPolicy";
+import PrivacyPolicy from "./pages/privacy-policy/PrivacyPolicy";
 
 function App() {
   return (
