@@ -2,13 +2,15 @@ import React, { useEffect, useState } from "react";
 import "./ModalForm.scss";
 import { FaCheckCircle, FaTimesCircle, FaInfoCircle } from "react-icons/fa";
 import { formatTelegramMessage } from "../../utils/formatTelegramMessage";
-
+import Checkbox from "@mui/material/Checkbox";
+import FormControlLabel from "@mui/material/FormControlLabel";
 const ModalForm = ({ isOpen, onClose, serviceTitle }) => {
   const [formData, setFormData] = useState({
     name: "",
     email: "",
     message: "",
     socialContact: "",
+     agree: false,
   });
   const [errors, setErrors] = useState({});
 
@@ -37,6 +39,10 @@ const ModalForm = ({ isOpen, onClose, serviceTitle }) => {
     } else if (!nameRegex.test(formData.name.trim())) {
       newErrors.name = "Имя может содержать только буквы, пробелы и дефисы";
     }
+
+    if (!formData.agree) {
+        newErrors.agree = "Вы должны принять условия соглашения";
+      }
 
     // Валидация email
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
@@ -260,6 +266,24 @@ const ModalForm = ({ isOpen, onClose, serviceTitle }) => {
             <button type="submit" disabled={loading}>
               {loading ? "Отправка..." : "Отправить"}
             </button>
+       <FormControlLabel
+          control={
+            <Checkbox
+              checked={formData.agree}
+              onChange={(e) =>
+                setFormData({ ...formData, agree: e.target.checked })
+              }
+            />
+          }
+          label={
+            <>
+              Я принимаю{" "}
+              <a href="/UserAgreement" target="_blank">Пользовательское соглашение</a> и{" "}
+              <a href="/privacy-policy" className="link__privacy" target="_blank">Политику конфиденциальности</a>
+            </>
+          }
+        />
+      {errors.agree && <span className="form-error">{errors.agree}</span>}
           </form>
         )}
       </div>

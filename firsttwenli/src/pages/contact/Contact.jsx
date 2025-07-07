@@ -5,6 +5,9 @@ import animationData from "../../assets/Business_Team.json";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import ModalForm from "../../components/ModalForm/ModalForm";
+import { FaTelegramPlane, FaInstagram, FaVk, FaYoutube, FaEnvelope,FaGlobe   } from "react-icons/fa";
+import { Link } from "react-router-dom";
+import { Helmet } from "react-helmet-async";
 
 export default function ContactPage() {
   const [modalOpen, setModalOpen] = useState(false);
@@ -14,52 +17,55 @@ export default function ContactPage() {
   }, []);
 
   return (
-    <main className="contact-page">
+     <>
+      <Helmet>
+        <title>Контакты | FirstTwenli</title>
+        <meta name="description" content="Свяжитесь с нами — мы всегда рады обсудить ваш проект." />
+        <meta property="og:title" content="Контакты | FirstTwenli" />
+        <meta property="og:description" content="Свяжитесь с нами — мы всегда рады обсудить ваш проект." />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://firsttwenli.kz/contact" />
+      </Helmet>
+    <main className="">
       <div className="container">
-        {/* Hero / Intro */}
-        <section className="contact-hero" data-aos="fade-up">
-          <div className="text-block">
-            <h1>Свяжитесь с нами</h1>
-            <p>
-              Мы работаем полностью онлайн и всегда на связи через email и форму обратной связи. Напишите нам — мы ответим быстро!
-            </p>
+        <div className="rows__contact">
+        <div className="info_text__contact">
+          <h2>Давайте обсудим ваш проект</h2>
+          <p>У вас есть бизнес или идея, которую вы хотите вывести на новый уровень?
+            Мы создаём индивидуальные сайты, которые не просто красиво выглядят — они работают на результат.</p>
+            <p> Наша цель — помочь малому и среднему бизнесу заявить о себе в цифровом пространстве: профессионально, стильно и эффективно.
+            Мы выслушаем вас, предложим оптимальное решение и воплотим проект под ключ.</p>
+          <div className="list__info__text">
+            <h3> <FaEnvelope />Email</h3>
+         <a href="mailto:beebs@gmail.com">beebs@gmail.com</a>
           </div>
-          <div className="animation-block">
-            <Lottie animationData={animationData} loop={true} />
+            <div className="list__info__text">
+            <h3><FaGlobe />Социальные сети</h3>
+            <Link
+              to="https://t.me/yourchannel"
+              target="_blank"
+              rel="noopener noreferrer"
+            >  <FaInstagram />Instagram</Link>
+            <Link
+              to="https://t.me/yourchannel"
+              target="_blank"
+              rel="noopener noreferrer"
+            >  <FaTelegramPlane />Telegram</Link>
           </div>
-        </section>
-
-        {/* Contact Info */}
-        <section className="contact-info" data-aos="fade-right">
-          <h2>Как с нами связаться</h2>
-          <ul>
-            <li>✉️ Email: <a href="mailto:info@example.com">info@example.com</a></li>
-            <li>🌐 Соцсети:
-              <ul className="social-links">
-                <li><a href="https://t.me/yourtelegram" target="_blank" rel="noreferrer">Telegram</a></li>
-                <li><a href="https://vk.com/yourvk" target="_blank" rel="noreferrer">VK</a></li>
-                <li><a href="https://www.linkedin.com/in/yourlinkedin" target="_blank" rel="noreferrer">LinkedIn</a></li>
-              </ul>
-            </li>
-          </ul>
-        </section>
-
-        {/* Call to Action */}
-        <section className="cta" data-aos="fade-up">
-          <h2>Хотите обсудить проект?</h2>
-          <p>Оставьте заявку через форму, и мы свяжемся с вами в ближайшее время.</p>
+        </div>
+        <section className="">
           <button className="btn-primary" onClick={() => setModalOpen(true)}>
-            Оставить заявку
+            Напишите нам — мы на связи
           </button>
         </section>
-      </div>
-
-      {/* Модальное окно заявки */}
+        </div>
+      </div> 
       <ModalForm
         isOpen={modalOpen}
         onClose={() => setModalOpen(false)}
         serviceTitle="Заявка с страницы Контакты"
       />
     </main>
+    </>
   );
 }

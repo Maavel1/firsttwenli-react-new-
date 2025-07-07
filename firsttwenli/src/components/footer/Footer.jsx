@@ -18,11 +18,12 @@ const Footer = () => {
           <Link to="/services">Услуги</Link>
           <Link to="/about">О нас</Link>
           <Link to="/contact">Контакты</Link>
+           <Link to="/portfolio">Портфолио</Link>
         </div>
 
         <div className="footer-section contacts">
           <h4>Контакты</h4>
-          <p>Email: info@firsttwenli.com</p>
+           <a href="mailto:beebs@gmail.com">Email: beebs@gmail.com</a>
           <div className="social-icons">
             <a
               href="https://t.me/yourchannel"
@@ -47,7 +48,7 @@ const Footer = () => {
         <div className="footer-section legal">
           <h4>Правовая информация</h4>
           <Link to="/privacy-policy">Политика конфиденциальности</Link>
-          <Link to="/terms">Пользовательское соглашение</Link>
+          <Link to="/UserAgreement">Пользовательское соглашение</Link>
         </div>
       </div>
 

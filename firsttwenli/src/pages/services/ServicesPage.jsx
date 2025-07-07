@@ -4,6 +4,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, Pagination } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/pagination";
+import { Helmet } from 'react-helmet-async';
 
 import ServiceCard from "../../components/ServiceCard/ServiceCard";
 import ModalForm from "../../components/ModalForm/ModalForm";
@@ -72,6 +73,16 @@ export default function ServicesPage() {
   }, []);
 
   return (
+       <>
+      <Helmet>
+        <title>Услуги | FirstTwenli</title>
+        <meta name="description" content="Посмотрите наши услуги по разработке сайтов и цифровым решениям." />
+        <meta property="og:title" content="Услуги | FirstTwenli" />
+        <meta property="og:description" content="Посмотрите наши услуги по разработке сайтов и цифровым решениям." />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://firsttwenli.kz/services" />
+      </Helmet>
+
     <main className="services-page">
       <div className="container">
         <div className="promo-slider">
@@ -91,7 +102,6 @@ export default function ServicesPage() {
                 </SwiperSlide>
               ))}
             </Swiper>
-
             <div className="progress-bar">
               <div
                 className="progress-bar-fill"
@@ -124,5 +134,6 @@ export default function ServicesPage() {
         />
       </div>
     </main>
+    </>
   );
 }

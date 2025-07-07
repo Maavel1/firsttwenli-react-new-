@@ -47,17 +47,23 @@ const Header = () => {
           >
             Услуги
           </NavLink>
-          <NavLink
+             <NavLink
             className={`navds${scrolled ? " scrolleddg" : ""}`}
-            to="/about"
+            to="/portfolio"
           >
-            О нас
+            Портфолио
           </NavLink>
           <NavLink
             className={`navds${scrolled ? " scrolleddg" : ""}`}
             to="/contact"
           >
             Контакты
+          </NavLink>
+         <NavLink
+            className={`navds${scrolled ? " scrolleddg" : ""}`}
+            to="/about"
+          >
+            О нас
           </NavLink>
         </nav>
         <button className="cta-button" onClick={handleOpenModal}>

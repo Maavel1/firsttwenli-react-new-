@@ -2,7 +2,7 @@ const { Sequelize } = require("sequelize");
 
 // Вариант 1: Использование переменных окружения по отдельности (рекомендуется)
 const sequelize = new Sequelize(
-  process.env.DB_NAME,
+  process.env.DB_DATABASE,
   process.env.DB_USER,
   process.env.DB_PASSWORD,
   {

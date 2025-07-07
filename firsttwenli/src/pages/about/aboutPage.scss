@@ -181,3 +181,39 @@
     }
   }
 }
+
+
+.steps-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.steps-list li {
+  display: flex;
+  align-items: center;
+  font-size: 1.1rem;
+  margin-bottom: 14px;
+}
+
+.icon {
+  margin: 0px 10px 0px 10px;
+  font-size: 1.1rem;
+}
+
+.handshake {
+  color: #4CAF50; // зелёный
+}
+
+.paint {
+  color: #FF9800; // оранжевый
+}
+
+.code {
+  color: #3F51B5; // синий
+}
+
+.rocket {
+  color: #E91E63; // розовый
+}
+

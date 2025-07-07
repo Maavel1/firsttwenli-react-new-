@@ -37,6 +37,7 @@ const Comment = sequelize.define(
     },
   },
   {
+    tableName: "comments",
     timestamps: true,
     paranoid: true, // Мягкое удаление
   }

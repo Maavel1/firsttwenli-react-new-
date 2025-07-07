@@ -102,3 +102,49 @@
     }
   }
 }
+
+.rows__contact {
+  display: flex;
+  justify-content: center;
+  gap: 90px;
+  align-items: center;
+  margin-top: 90px;
+}
+
+.info_text__contact {
+  max-width: 500px;
+}
+
+.info_text__contact {
+  h2 {
+    color: white;
+    font-size: 34px;
+    margin-bottom: 20px;
+  }
+  p {
+    color: #9d9d9d;
+    margin-bottom: 20px;
+  }
+}
+
+.list__info__text {
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+  margin-top: 25px;
+
+  h3 {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+    margin: 0px;
+    color: white;
+  }
+
+  a {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+    max-width: 100px;
+  }
+}

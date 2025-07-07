@@ -8,6 +8,8 @@ import Breadcrumbs from "../Breadcrumbs/Breadcrumbs";
 import time from "../../assets/services/timer.svg";
 import price from "../../assets/services/price-tag.svg";
 import ModalForm from "../ModalForm/ModalForm";
+import { Helmet } from "react-helmet-async";
+
 // import {} from "react-icons/ai";
 import { motion, AnimatePresence } from "framer-motion";
 import CommentItem from "../CommentItem/CommentItem";
@@ -89,7 +91,7 @@ export default function ServiceDetailsPage() {
     setLoadingComments(true);
     try {
       const [commentsRes, ratingRes] = await Promise.all([
-        fetch(`http://localhost:5000/api/comments/${id}?page=${page}&limit=5`), // Используем page
+        fetch(`http://localhost:5000/api/comments/${id}?page=${page}&limit=5`), 
         fetch(`http://localhost:5000/api/comments/${id}/rating`),
       ]);
 
@@ -112,7 +114,7 @@ export default function ServiceDetailsPage() {
     fetchData();
   }, [id]);
   const StarRatingDisplay = ({ rating = 0 }) => {
-    const numericRating = Math.max(0, Math.min(5, Number(rating))); // Ограничиваем рейтинг от 0 до 5
+    const numericRating = Math.max(0, Math.min(5, Number(rating)));
 
     return (
       <div className="star-rating-display">
@@ -146,7 +148,7 @@ export default function ServiceDetailsPage() {
     );
   };
   const handleAddComment = async () => {
-    // Сброс предыдущих ошибок
+
     setErrors({
       userName: "",
       comment: "",
@@ -155,7 +157,7 @@ export default function ServiceDetailsPage() {
     });
     setError("");
 
-    // Валидация на клиенте
+
     let isValid = true;
     const newErrors = {
       userName: "",
@@ -164,7 +166,6 @@ export default function ServiceDetailsPage() {
       general: "",
     };
 
-    // Валидация имени
     if (!userName.trim()) {
       newErrors.userName = "Имя обязательно для заполнения";
       isValid = false;
@@ -182,8 +183,6 @@ export default function ServiceDetailsPage() {
         isValid = false;
       }
     }
-
-    // Валидация комментария
     if (!newComment.trim()) {
       newErrors.comment = "Комментарий обязателен для заполнения";
       isValid = false;
@@ -241,7 +240,6 @@ export default function ServiceDetailsPage() {
       const ratingData = await ratingRes.json();
 
       const data = await response.json();
-      // Обновляем список комментариев
       setCommentsData((prev) => ({
         ...prev,
         comments: [data, ...prev.comments],
@@ -266,20 +264,18 @@ export default function ServiceDetailsPage() {
   }
 
   const handleOpenModal = () => {
-    setIsModalOpen(true); // Открыть модальное окно
+    setIsModalOpen(true); 
   };
 
   const handleCloseModal = () => {
-    setIsModalOpen(false); // Закрыть модальное окно
+    setIsModalOpen(false);
   };
 
   const toggleExpand = () => {
     if (textRef.current) {
       if (isExpanded) {
-        // Сворачиваем обратно
         setHeight("100px");
       } else {
-        // Раскрываем до полной высоты
         setHeight(`${textRef.current.scrollHeight}px`);
       }
       setIsExpanded(!isExpanded);
@@ -293,6 +289,15 @@ export default function ServiceDetailsPage() {
   }, [commentsData]);
 
   return (
+     <>
+      <Helmet>
+        <title>{service?.title || "Услуга"} | FirstTwenli</title>
+        <meta name="description" content={service?.description || "Детали услуги"} />
+        <meta property="og:title" content={`${service?.title || "Услуга"} | FirstTwenli`} />
+        <meta property="og:description" content={service?.description || "Подробнее о нашей услуге"} />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content={`https://firsttwenli.kz/services/${id}`} />
+      </Helmet>
     <div className="service-details container">
       <Breadcrumbs />
       <div className="rows_service_details">
@@ -448,5 +453,6 @@ export default function ServiceDetailsPage() {
         )}
       </div>
     </div>
+        </>
   );
 }
