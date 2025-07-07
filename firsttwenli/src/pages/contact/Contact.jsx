@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import "./contactPage.scss";
+import "./ContactPage.scss";
 import Lottie from "lottie-react";
 import animationData from "../../assets/Business_Team.json";
 import AOS from "aos";
