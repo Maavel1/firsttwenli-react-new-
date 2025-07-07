@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import "./Portfolio.scss";
+import "./portfolio.scss";
 import portfolio_1 from "../../assets/portfolio/portfolio_2.webp";
 import { Helmet } from "react-helmet-async";
 export default function Portfolio() {
