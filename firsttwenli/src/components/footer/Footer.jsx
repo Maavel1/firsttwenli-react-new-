@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import "./Footer.scss";
+import "./footer.scss";
 import logo from "../../assets/logo_1.png"; // если есть логотип
 import { FaTelegramPlane, FaInstagram, FaVk, FaYoutube } from "react-icons/fa";
 const Footer = () => {
