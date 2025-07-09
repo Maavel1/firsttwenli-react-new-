@@ -84,7 +84,11 @@ const API_URL = import.meta.env.VITE_REACT_APP_API_URL || "http://localhost:5000
                   <h2 className="title_card_portfolio">{item.title}</h2>
                   <button onClick={() => openModal(item)}>подробнее</button>
                 </div>
-                <p className="pre__title_card">{item.description}</p>
+                <p className="pre__title_card">
+              {item.description.length > 120
+                ? item.description.slice(0, 120) + '...'
+                : item.description}
+            </p>
               </div>
             </div>
           ))}

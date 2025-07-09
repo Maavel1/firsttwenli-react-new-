@@ -29,8 +29,10 @@
 }
 
 .img__card__info__portfolio {
-    max-width: 450px;
-    width: 100%;
+  width: 100%;
+  max-width: 450px;
+  height: 207px;
+  object-fit: cover;
 }
 
 .title_card_portfolio {
@@ -91,6 +93,13 @@
   opacity: 0;
   transition: all 0.35s ease;
   overflow: hidden;
+
+  p {
+    max-height: 200px;
+    overflow: auto;
+    overflow-x: hidden;
+    line-height: 1.6;
+  }
 }
 
 .modal__content.fade-in {
