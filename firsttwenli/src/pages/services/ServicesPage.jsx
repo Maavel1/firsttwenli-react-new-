@@ -80,7 +80,7 @@ export default function ServicesPage() {
         <meta property="og:title" content="Услуги | FirstTwenli" />
         <meta property="og:description" content="Посмотрите наши услуги по разработке сайтов и цифровым решениям." />
         <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://firsttwenli.kz/services" />
+        <meta property="og:url" content="https://firsttwenli-react-new.vercel.app/services" />
       </Helmet>
 
     <main className="services-page">
